@@ -298,6 +298,16 @@ textarea{min-height:120px;resize:vertical}
 .axe .corps{padding:24px;display:flex;flex-direction:column;gap:10px}
 .axe p,.axe li{color:var(--texte-doux)}
 .axe ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.videos{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}
+.vid{background:var(--blanc);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden}
+.vid button{all:unset;cursor:pointer;display:block;position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.vid button img{width:100%;height:100%;object-fit:cover;opacity:.85;display:block}
+.vid button::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:var(--cuivre) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z' fill='white'/%3E%3C/svg%3E") center/28px no-repeat}
+.vid button:focus-visible{outline:3px solid var(--sable)}
+.vid iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+.vid .corps{padding:18px 20px}
+.vid .corps p{color:var(--texte-doux);margin-top:4px}
+@media (max-width:980px){.videos{grid-template-columns:1fr}}
 @media (max-width:980px){.offres{grid-template-columns:1fr 1fr}.deux,.axes{grid-template-columns:1fr}.sequences{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.offres,.sequences{grid-template-columns:1fr}}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -427,6 +437,32 @@ textarea{min-height:120px;resize:vertical}
       </div>
     </div>
   </section>
+  <section class="page-section alt" id="videos">
+    <div class="wrap">
+      <p class="eyebrow">En vidéo</p>
+      <h2>L'équipe iGEM Outaouais en images</h2>
+      <p class="lead" style="margin-top:12px">Présentations, Grand Jamboree et témoignages : retrouvez toutes nos vidéos sur la chaîne YouTube de l'équipe.</p>
+      <div class="videos">
+        <article class="vid">
+          <button type="button" data-yt="K08OXC4Y7Tg" aria-label="Lire la vidéo : Médaille d'argent au Grand Jamboree 2024"><img src="https://i.ytimg.com/vi/K08OXC4Y7Tg/hqdefault.jpg" alt="" loading="lazy"></button>
+          <div class="corps"><h3>Médaille d'argent au Grand Jamboree 2024</h3><p>TIME2ACT, Paris 2024</p></div>
+        </article>
+        <article class="vid">
+          <button type="button" data-yt="6iIDH2DuqKE" aria-label="Lire la vidéo : L'équipe au Grand Jamboree de Paris"><img src="https://i.ytimg.com/vi/6iIDH2DuqKE/hqdefault.jpg" alt="" loading="lazy"></button>
+          <div class="corps"><h3>L'équipe au Grand Jamboree de Paris</h3><p>Jour 2 à Paris, 2024</p></div>
+        </article>
+        <article class="vid">
+          <button type="button" data-yt="HKQrAPMYkn4" aria-label="Lire la vidéo : Vidéo promotionnelle One Health Outaouais"><img src="https://i.ytimg.com/vi/HKQrAPMYkn4/hqdefault.jpg" alt="" loading="lazy"></button>
+          <div class="corps"><h3>Vidéo promotionnelle One Health Outaouais</h3><p>Saison 2024-2025, avec sous-titres</p></div>
+        </article>
+        <article class="vid">
+          <button type="button" data-yt="PIKQdXr9Vww" aria-label="Lire la vidéo : Témoignage de Chloé"><img src="https://i.ytimg.com/vi/PIKQdXr9Vww/hqdefault.jpg" alt="" loading="lazy"></button>
+          <div class="corps"><h3>Témoignage de Chloé</h3><p>Ce que l'expérience iGEM lui a apporté</p></div>
+        </article>
+      </div>
+      <div class="plus"><a class="btn btn-primaire" href="https://www.youtube.com/@Igem-Outaouais" target="_blank" rel="noopener">Voir la chaîne YouTube <svg class="fleche"><use href="#i-fleche"/></svg></a></div>
+    </div>
+  </section>
   <section class="bande-cta">
     <div class="wrap">
       <div>
@@ -453,7 +489,7 @@ textarea{min-height:120px;resize:vertical}
       </div>
       <div>
         <h3>Nos équipes</h3>
-        <ul><li><a href="https://equipeigemoutaouais.com/" target="_blank" rel="noopener">Équipe iGEM Outaouais</a></li><li><a href="https://igem.org" target="_blank" rel="noopener">iGEM international</a></li><li><a href="a-propos.html">Centre SEBO</a></li><li><a href="participer.html">Participer</a></li><li><a href="https://www.zeffy.com/fr-CA/ticketing/plan-de-commandite-igem-outaouais-2026--2027" target="_blank" rel="noopener">Commanditer iGEM Outaouais</a></li></ul>
+        <ul><li><a href="https://equipeigemoutaouais.com/" target="_blank" rel="noopener">Équipe iGEM Outaouais</a></li><li><a href="https://www.youtube.com/@Igem-Outaouais" target="_blank" rel="noopener">Chaîne YouTube iGEM Outaouais</a></li><li><a href="https://igem.org" target="_blank" rel="noopener">iGEM international</a></li><li><a href="a-propos.html">Centre SEBO</a></li><li><a href="participer.html">Participer</a></li><li><a href="https://www.zeffy.com/fr-CA/ticketing/plan-de-commandite-igem-outaouais-2026--2027" target="_blank" rel="noopener">Commanditer iGEM Outaouais</a></li></ul>
       </div>
     </div>
     <div class="bas"><span>© 2026 École de l'innovation en Outaouais</span><span>Un projet du Centre SEBO et du Cégep de l'Outaouais</span></div>
@@ -464,6 +500,7 @@ textarea{min-height:120px;resize:vertical}
   const btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
   btn.addEventListener('click',()=>{const o=nav.classList.toggle('ouvert');btn.setAttribute('aria-expanded',o)});
   nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('ouvert');btn.setAttribute('aria-expanded','false')}});
+  document.querySelectorAll('[data-yt]').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0';f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;b.replaceWith(f)}));
 </script>
 </body>
 </html>
