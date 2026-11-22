@@ -302,6 +302,16 @@ textarea{min-height:120px;resize:vertical}
 .logos-pied{display:flex;gap:64px;align-items:center;justify-content:center;flex-wrap:wrap;padding:36px 0;margin-top:32px;border-top:1px solid rgba(255,255,255,.15)}
 .logos-pied img{height:84px;width:auto}
 .logos-pied img[src$=".svg"]{height:120px}
+.cours-liste{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.cours{display:grid;grid-template-columns:150px 1fr 1fr;gap:24px;align-items:start;background:var(--blanc,#fff);border:1px solid rgba(0,0,0,.08);border-radius:var(--r);padding:20px 24px}
+.cours .qd{display:flex;flex-direction:column;gap:4px}
+.cours .qd b{font:800 1.6rem/1 var(--display);color:var(--terre,#b5653f)}
+.cours .qd span{font-size:.85rem;color:var(--texte-doux)}
+.cours h3{margin:0 0 6px;font-size:1.1rem}
+.cours p{margin:0;font-size:.95rem}
+.cours .notions{display:flex;flex-wrap:wrap;gap:6px}
+.cours .notions span{font-size:.8rem;background:#DCE8E0;color:#2E5A41;border-radius:999px;padding:.35em .75em}
+@media(max-width:800px){.cours{grid-template-columns:1fr;gap:10px}}
 @media(max-width:600px){.logos-pied{gap:20px}.logos-pied img{height:46px}.logos-pied img[src$=".svg"]{height:66px}}
 @media (max-width:600px){.logo-igem{height:90px}}
 .lien-fleche{font-weight:700;color:var(--petrole);display:inline-flex;gap:6px;align-items:center}

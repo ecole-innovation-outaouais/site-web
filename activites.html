@@ -302,6 +302,16 @@ textarea{min-height:120px;resize:vertical}
 .logos-pied{display:flex;gap:64px;align-items:center;justify-content:center;flex-wrap:wrap;padding:36px 0;margin-top:32px;border-top:1px solid rgba(255,255,255,.15)}
 .logos-pied img{height:84px;width:auto}
 .logos-pied img[src$=".svg"]{height:120px}
+.cours-liste{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.cours{display:grid;grid-template-columns:150px 1fr 1fr;gap:24px;align-items:start;background:var(--blanc,#fff);border:1px solid rgba(0,0,0,.08);border-radius:var(--r);padding:20px 24px}
+.cours .qd{display:flex;flex-direction:column;gap:4px}
+.cours .qd b{font:800 1.6rem/1 var(--display);color:var(--terre,#b5653f)}
+.cours .qd span{font-size:.85rem;color:var(--texte-doux)}
+.cours h3{margin:0 0 6px;font-size:1.1rem}
+.cours p{margin:0;font-size:.95rem}
+.cours .notions{display:flex;flex-wrap:wrap;gap:6px}
+.cours .notions span{font-size:.8rem;background:#DCE8E0;color:#2E5A41;border-radius:999px;padding:.35em .75em}
+@media(max-width:800px){.cours{grid-template-columns:1fr;gap:10px}}
 @media(max-width:600px){.logos-pied{gap:20px}.logos-pied img{height:46px}.logos-pied img[src$=".svg"]{height:66px}}
 @media (max-width:600px){.logo-igem{height:90px}}
 .lien-fleche{font-weight:700;color:var(--petrole);display:inline-flex;gap:6px;align-items:center}
@@ -515,6 +525,32 @@ a.logo-projet{text-decoration:none}
           </div>
         </article>
       </div>
+    </div>
+  </section>
+  <section class="page-section alt" id="exploration-2026">
+    <div class="wrap">
+      <p class="eyebrow">Parcours Exploration 2026</p>
+      <h2>Sept cours, de la micropipette au projet</h2>
+      <p class="lead" style="margin-top:14px;max-width:780px">D'octobre à novembre 2026, 28 jeunes du deuxième cycle du secondaire (3<sup>e</sup> à 5<sup>e</sup> secondaire) ont passé vingt-cinq heures au laboratoire du Cégep. Avant chaque cours, une capsule LabX les préparait ; au labo, ils pratiquaient, puis discutaient de l'utilité des techniques.</p>
+      <ol class="cours-liste">
+        <li class="cours"><div class="qd"><b>1</b><span>3 oct. 2026</span></div><div><h3>Entrer au labo</h3><p>Règles de sécurité, tenue du cahier de laboratoire, premiers gestes avec les micropipettes fixes et ajustables sur cartes de pratique.</p></div><div class="notions"><span>Sécurité</span><span>Micropipetage</span><span>Biologie synthétique</span><span>iGEM</span></div></li>
+        <li class="cours"><div class="qd"><b>2</b><span>10 oct. 2026</span></div><div><h3>Cultiver</h3><p>Compétition de précision au pipetage, vérifiée à la balance, puis ensemencement de bactéries sur milieux solide et liquide.</p></div><div class="notions"><span>Asepsie</span><span>Milieux de culture</span><span>Microbiologie</span><span>Biorisque</span><span>Antibiorésistance</span></div></li>
+        <li class="cours"><div class="qd"><b>3</b><span>17 oct. 2026</span></div><div><h3>Couper l'ADN</h3><p>Préparation d'un gel d'agarose, digestion d'un plasmide par une enzyme de restriction, migration et lecture des bandes.</p></div><div class="notions"><span>Plasmides</span><span>Enzymes de restriction</span><span>Électrophorèse</span></div></li>
+        <li class="cours"><div class="qd"><b>4</b><span>24 oct. 2026</span></div><div><h3>Produire sans cellule</h3><p>Kit BioBits sur l'antibiorésistance : faire fabriquer une protéine fluorescente hors de la cellule. Retour sur les gels et les cultures.</p></div><div class="notions"><span>Synthèse des protéines</span><span>Traduction</span><span>Systèmes acellulaires</span></div></li>
+        <li class="cours"><div class="qd"><b>5</b><span>31 oct. 2026</span></div><div><h3>Amplifier</h3><p>Lancer une PCR, lire l'architecture d'un plasmide (promoteur, séquence codante, terminateur) et comprendre la restriction et la ligation.</p></div><div class="notions"><span>PCR</span><span>Structure d'un plasmide</span><span>Ligation</span><span>Pathogènes</span><span>Salubrité alimentaire</span></div></li>
+        <li class="cours"><div class="qd"><b>6</b><span>7 nov. 2026</span></div><div><h3>Analyser</h3><p>Couler et charger des gels, photographier, calculer et interpréter les résultats. Présentation du parcours Innovation.</p></div><div class="notions"><span>Interprétation d'un gel</span><span>Calculs</span><span>Analyse de résultats</span></div></li>
+        <li class="cours"><div class="qd"><b>7</b><span>21 nov. 2026</span></div><div><h3>Concevoir</h3><p>Chaque jeune propose un projet de biologie synthétique. Dernier gel en équipe, puis formation des équipes du parcours Innovation.</p></div><div class="notions"><span>De la question au projet</span><span>Travail d'équipe</span></div></li>
+      </ol>
+      <h3 style="margin-top:48px">Les compétences développées</h3>
+      <div class="offres">
+        <div class="offre"><span class="num">01</span><h3>Le geste juste</h3><p>Micropipetage précis, techniques stériles, préparation de gels et de milieux de culture.</p></div>
+        <div class="offre"><span class="num">02</span><h3>La rigueur</h3><p>Sécurité et biorisque, asepsie, cahier de laboratoire tenu à chaque séance.</p></div>
+        <div class="offre"><span class="num">03</span><h3>La démarche scientifique</h3><p>Prédire, observer, mesurer, interpréter un résultat et en discuter.</p></div>
+        <div class="offre"><span class="num">04</span><h3>L'autonomie</h3><p>Des capsules LabX à faire avant chaque cours, pour arriver prêt à manipuler.</p></div>
+        <div class="offre"><span class="num">05</span><h3>Le travail d'équipe</h3><p>Manipuler à trois ou quatre, partager les rôles, puis bâtir un projet ensemble.</p></div>
+        <div class="offre"><span class="num">06</span><h3>L'esprit d'innovation</h3><p>Relier la biologie synthétique à un problème réel et proposer sa propre idée de projet.</p></div>
+      </div>
+      <p class="lead" style="margin-top:32px">Résultat : 28 jeunes formés, dont 12 poursuivent dans le parcours Innovation, vers Expo-sciences 2027 puis iGEM 2027.</p>
     </div>
   </section>
   <section class="bande-cta">
