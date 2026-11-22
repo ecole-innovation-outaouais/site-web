@@ -218,6 +218,18 @@ textarea{min-height:120px;resize:vertical}
 
 /* Chercheurs */
 .chercheurs{padding:88px 0;background:var(--creme)}
+.membres{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.membre{background:var(--blanc);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--trait)}
+.membre-tete{display:flex;gap:14px;align-items:center}
+.membre-tete strong{display:block;font:700 1.08rem var(--display);color:var(--nuit)}
+.membre-tete .inst{display:block;font-size:.85rem;color:var(--cuivre);font-weight:700}
+.membre ul{margin:0;padding-left:1.1em;display:grid;gap:4px;color:var(--texte-doux);font-size:.95rem}
+.membre .liens-p{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:auto;font-size:.9rem;font-weight:700}
+.membre .liens-p a{display:inline-flex;align-items:center;gap:5px}
+.initiales.uo{background:var(--cuivre)}
+.initiales.uqo{background:var(--sauge);color:var(--nuit)}
+@media (max-width:980px){.membres{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.membres{grid-template-columns:1fr}}
 .groupes{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-top:36px}
 .groupe h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--cuivre);margin-bottom:14px;font-family:var(--corps)}
 .personnes{display:grid;gap:12px}
@@ -426,34 +438,47 @@ a.logo-projet{text-decoration:none}
       <p>Rencontrez l'équipe, joignez-vous à nous, et faites partie d'une communauté régionale d'enseignants qui font vivre la science autrement.</p>
     </div>
   </section>
-  <section class="chercheurs" aria-labelledby="t-equipe">
+  <section class="chercheurs" id="equipe" aria-labelledby="t-equipe">
     <div class="wrap">
       <p class="eyebrow">L'équipe</p>
-      <h2 id="t-equipe">Nos enseignants et chercheurs</h2>
-      <p class="lead" style="margin-top:12px">Des enseignants du Cégep de l'Outaouais et des chercheurs de trois institutions encadrent les jeunes, coconstruisent les projets et ouvrent leurs laboratoires.</p>
-      <div class="groupes">
-        <div class="groupe sebo">
-          <h3>École de l'innovation · <a href="https://crsebo.ca/" target="_blank" rel="noopener">Centre SEBO</a>, Cégep de l'Outaouais</h3>
-          <div class="personnes">
-            <div class="personne"><span class="initiales" aria-hidden="true">SP</span><div><strong>Stéphanie Pontier</strong><span>Directrice scientifique, pharmacologie moléculaire et biologie synthétique</span><span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/stephaniepontier/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span></div></div>
-            <div class="personne"><span class="initiales" aria-hidden="true">CH</span><div><strong>Catherine Hallé</strong><span>Biologie</span><span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/catherine-hall%C3%A9-393985248/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span></div></div>
-            <div class="personne"><span class="initiales" aria-hidden="true">BM</span><div><strong>Bilal Manaï</strong><span>Électronique et instrumentation</span><span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/bilalmanai/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span></div></div>
-            <div class="personne"><span class="initiales" aria-hidden="true">NS</span><div><strong>Navoun Silué</strong><span>Microbiologie moléculaire et tests de détection LAMP</span><span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/siluenavoun2014/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span></div></div>
-            <div class="personne"><span class="initiales" aria-hidden="true">ML</span><div><strong>Mathieu Legault</strong><span>Muséologie et santé environnementale</span><span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/mathieu-legault-912993252/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span></div></div>
-          </div>
-        </div>
-        <div class="groupe uo">
-          <h3>Université d'Ottawa</h3>
-          <div class="personnes">
-            <div class="personne"><span class="initiales" aria-hidden="true">FC</span><div><strong>François-Xavier Campbell-Valois</strong><span>Interactions microbe-hôte, Département de chimie et sciences biomoléculaires</span><span class="liens-p"><a href="https://www.uottawa.ca/faculte-sciences/professeurs/francois-xavier-campbell-valois" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/fxcampbellvaloishostpathogen/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span></div></div>
-          </div>
-        </div>
-        <div class="groupe uqo">
-          <h3>ISFORT · UQO</h3>
-          <div class="personnes">
-            <div class="personne"><span class="initiales" aria-hidden="true">YS</span><div><strong>Yann Surget-Groba</strong><span>Génomique écologique et environnementale, ADN environnemental</span><a href="https://isfort.uqo.ca/en/professeurs/yann-surget-groba/" target="_blank" rel="noopener">Profil</a></div></div>
-          </div>
-        </div>
+      <h2 id="t-equipe">L'équipe de l'École de l'innovation</h2>
+      <p class="lead" style="margin-top:12px">Des enseignants-chercheurs du Centre SEBO et des professeurs d'université encadrent les jeunes, dirigent les volets de l'École et ouvrent leurs laboratoires.</p>
+      <div class="membres">
+        <article class="membre">
+          <div class="membre-tete"><span class="initiales " aria-hidden="true">SP</span><div><strong>Stéphanie Pontier</strong><span class="inst">Cégep de l'Outaouais · Centre SEBO</span></div></div>
+          <ul><li>Fondatrice de l'École de l'innovation</li><li>Responsable de la stratégie scientifique du SEBO</li><li>Directrice du volet biotechnologie</li><li>Chercheuse principale de l'équipe iGEM Outaouais</li></ul>
+          <span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/stephaniepontier/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span>
+        </article>
+        <article class="membre">
+          <div class="membre-tete"><span class="initiales " aria-hidden="true">CH</span><div><strong>Catherine Hallé</strong><span class="inst">Cégep de l'Outaouais · Centre SEBO</span></div></div>
+          <ul><li>Responsable des affaires du SEBO</li><li>Directrice du volet BioBlitz de l'École</li><li>Mentore du volet biotechnologie</li><li>Enseignante-chercheuse</li></ul>
+          <span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/catherine-hall%C3%A9-393985248/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span>
+        </article>
+        <article class="membre">
+          <div class="membre-tete"><span class="initiales " aria-hidden="true">BM</span><div><strong>Bilal Manaï</strong><span class="inst">Cégep de l'Outaouais · Centre SEBO</span></div></div>
+          <ul><li>Directeur du volet électronique, IoT, intelligence artificielle et programmation</li><li>Enseignant-chercheur au SEBO</li></ul>
+          <span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/bilalmanai/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span>
+        </article>
+        <article class="membre">
+          <div class="membre-tete"><span class="initiales " aria-hidden="true">ML</span><div><strong>Mathieu Legault</strong><span class="inst">Cégep de l'Outaouais · Centre SEBO</span></div></div>
+          <ul><li>Directeur du volet multimédia, muséologie et communication</li><li>Enseignant-chercheur au SEBO</li><li>Coordonnateur du département de Techniques d'intégration multimédia</li></ul>
+          <span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/mathieu-legault-912993252/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span>
+        </article>
+        <article class="membre">
+          <div class="membre-tete"><span class="initiales " aria-hidden="true">NS</span><div><strong>Navoun Silué</strong><span class="inst">Cégep de l'Outaouais · Centre SEBO</span></div></div>
+          <ul><li>Mentor du volet biologie synthétique</li><li>Enseignant-chercheur au SEBO</li><li>Professeur au département de chimie</li></ul>
+          <span class="liens-p"><a href="https://crsebo.ca/?page_id=32" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/siluenavoun2014/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span>
+        </article>
+        <article class="membre">
+          <div class="membre-tete"><span class="initiales uo" aria-hidden="true">FC</span><div><strong>François-Xavier Campbell-Valois</strong><span class="inst">Université d'Ottawa</span></div></div>
+          <ul><li>Professeur agrégé, Département de chimie et sciences biomoléculaires</li><li>Directeur du laboratoire HMI</li><li>Mentor en biologie synthétique</li></ul>
+          <span class="liens-p"><a href="https://fxcampbellvalois.org/" target="_blank" rel="noopener">Laboratoire HMI</a><a href="https://www.uottawa.ca/faculte-sciences/professeurs/francois-xavier-campbell-valois" target="_blank" rel="noopener">Profil</a><a href="https://www.linkedin.com/in/fxcampbellvaloishostpathogen/" target="_blank" rel="noopener"><img class="ico-li" src="https://www.linkedin.com/favicon.ico" alt="" width="18" height="18">LinkedIn</a></span>
+        </article>
+        <article class="membre">
+          <div class="membre-tete"><span class="initiales uqo" aria-hidden="true">YS</span><div><strong>Yann Surget-Groba</strong><span class="inst">Université du Québec en Outaouais · ISFORT</span></div></div>
+          <ul><li>Professeur à l'UQO, Institut des sciences de la forêt tempérée</li><li>Mentor en génomique et écologie</li></ul>
+          <span class="liens-p"><a href="https://isfort.uqo.ca/en/professeurs/yann-surget-groba/" target="_blank" rel="noopener">Profil</a></span>
+        </article>
       </div>
     </div>
   </section>

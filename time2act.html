@@ -218,6 +218,18 @@ textarea{min-height:120px;resize:vertical}
 
 /* Chercheurs */
 .chercheurs{padding:88px 0;background:var(--creme)}
+.membres{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.membre{background:var(--blanc);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--trait)}
+.membre-tete{display:flex;gap:14px;align-items:center}
+.membre-tete strong{display:block;font:700 1.08rem var(--display);color:var(--nuit)}
+.membre-tete .inst{display:block;font-size:.85rem;color:var(--cuivre);font-weight:700}
+.membre ul{margin:0;padding-left:1.1em;display:grid;gap:4px;color:var(--texte-doux);font-size:.95rem}
+.membre .liens-p{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:auto;font-size:.9rem;font-weight:700}
+.membre .liens-p a{display:inline-flex;align-items:center;gap:5px}
+.initiales.uo{background:var(--cuivre)}
+.initiales.uqo{background:var(--sauge);color:var(--nuit)}
+@media (max-width:980px){.membres{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.membres{grid-template-columns:1fr}}
 .groupes{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-top:36px}
 .groupe h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--cuivre);margin-bottom:14px;font-family:var(--corps)}
 .personnes{display:grid;gap:12px}
