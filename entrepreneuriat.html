@@ -312,6 +312,7 @@ textarea{min-height:120px;resize:vertical}
 .cours .notions{display:flex;flex-wrap:wrap;gap:6px}
 .cours .notions span{font-size:.8rem;background:#DCE8E0;color:#2E5A41;border-radius:999px;padding:.35em .75em}
 @media(max-width:800px){.cours{grid-template-columns:1fr;gap:10px}}
+@media(max-width:800px){.constat-large{grid-template-columns:1fr!important;gap:18px!important}}
 @media(max-width:800px){.reponse-eio{grid-template-columns:1fr!important;gap:28px!important}}
 @media(max-width:600px){.logos-pied{gap:20px}.logos-pied img{height:46px}.logos-pied img[src$=".svg"]{height:66px}}
 @media (max-width:600px){.logo-igem{height:90px}}
@@ -464,8 +465,6 @@ a.logo-projet{text-decoration:none}
         <p class="eyebrow">Pourquoi c'est important</p>
         <h2>Les Einstein et les Marie Curie perdus</h2>
         <p class="lead" style="margin-top:14px">L'économiste Raj Chetty, de l'Université Harvard, et ses collègues ont suivi le parcours de 1,2 million d'inventeurs aux États-Unis, de leur naissance à l'âge adulte. Leur constat est frappant : devenir inventeur dépend beaucoup plus du milieu où l'on grandit que du talent.<sup>1</sup></p>
-        <p class="lead" style="margin-top:12px">Les enfants des familles les plus aisées ont dix fois plus de chances de devenir inventeurs que ceux des familles à revenu modeste. Et ces écarts ne sont pas dus à un manque de talent, mais à un manque d'exposition.</p>
-        <p class="lead" style="margin-top:12px">Nous devons nourrir nos futurs innovateurs tout au long de leur développement. Il ne viendrait à l'idée de personne qu'un violoniste ou un hockeyeur puisse exceller en commençant sa formation à 19 ans, en entrant à l'université. C'est la même chose en science et en innovation.</p>
       </div>
       <div>
         <ol class="etapes" style="margin-top:8px">
@@ -475,6 +474,10 @@ a.logo-projet{text-decoration:none}
         </ol>
       </div>
     </div>
+    <div class="wrap"><div style="margin-top:40px;padding:32px 0 4px;border-top:1px solid rgba(0,0,0,.1);display:grid;grid-template-columns:1fr 1fr;gap:48px" class="constat-large">
+      <p style="font:700 clamp(1.3rem,2vw,1.6rem)/1.4 var(--display);color:var(--nuit);margin:0">Les enfants des familles les plus aisées ont dix fois plus de chances de devenir inventeurs que ceux des familles à revenu modeste. Et ces écarts ne sont pas dus à un manque de talent, mais à un manque d'exposition.</p>
+      <p class="lead" style="margin:0">Nous devons nourrir nos futurs innovateurs tout au long de leur développement. Il ne viendrait à l'idée de personne qu'un violoniste ou un hockeyeur puisse exceller en commençant sa formation à 19 ans, en entrant à l'université. C'est la même chose en science et en innovation.</p>
+    </div></div>
     <div class="wrap"><p style="margin-top:28px;padding-top:14px;border-top:1px solid rgba(0,0,0,.1);font-size:.8rem;line-height:1.5;color:var(--texte-doux)"><sup>1</sup> Bell, A., Chetty, R., Jaravel, X., Petkova, N. et Van Reenen, J. (2019). <i>Who Becomes an Inventor in America? The Importance of Exposure to Innovation</i>. Quarterly Journal of Economics, 134(2), 647-713. <a href="https://doi.org/10.1093/qje/qjy028" target="_blank" rel="noopener">doi:10.1093/qje/qjy028</a><br><sup>2</sup> Hoisl, K., Kongsted, H. C. et Mariani, M. (2023). <i>Lost Marie Curies: Parental Impact on the Probability of Becoming an Inventor</i>. Management Science, 69(3), 1714-1738. <a href="https://doi.org/10.1287/mnsc.2022.4432" target="_blank" rel="noopener">doi:10.1287/mnsc.2022.4432</a></p></div>
   </section>
   <section style="background:var(--nuit);color:#fff;padding:88px 0">
