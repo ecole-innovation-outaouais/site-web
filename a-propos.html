@@ -450,6 +450,24 @@ a.logo-projet{text-decoration:none}
       </div>
     </div>
   </section>
+  <section class="page-section alt" id="releve">
+    <div class="wrap">
+      <p class="eyebrow">Bâtir la relève</p>
+      <h2>Former les innovateurs de la bioéconomie</h2>
+      <p class="lead" style="margin-top:12px">Les jeunes de l'équipe iGEM Outaouais prennent la parole pour défendre le développement de la bio-innovation au Québec et au Canada, en français comme en anglais.</p>
+      <div class="videos">
+        <article class="vid">
+          <button type="button" data-yt="qJ6luzzn534" aria-label="Lire la vidéo : La relève en bio-innovation"><img src="https://i.ytimg.com/vi/qJ6luzzn534/hqdefault.jpg" alt="" loading="lazy"></button>
+          <div class="corps"><h3>La relève en bio-innovation</h3><p>Le Québec au Jamboree iGEM 2025, en français</p></div>
+        </article>
+        <article class="vid">
+          <button type="button" data-yt="ycC73fS_9i8" aria-label="Lire la vidéo : The future of Canadian biotech workforce"><img src="https://i.ytimg.com/vi/ycC73fS_9i8/hqdefault.jpg" alt="" loading="lazy"></button>
+          <div class="corps"><h3>The future of Canadian biotech workforce</h3><p>La relève canadienne en biotechnologie, en anglais</p></div>
+        </article>
+      </div>
+      <div class="plus"><a class="btn btn-primaire" href="https://www.youtube.com/@Igem-Outaouais" target="_blank" rel="noopener">Toutes nos vidéos <svg class="fleche"><use href="#i-fleche"/></svg></a></div>
+    </div>
+  </section>
   <section class="reseau2" aria-label="Institutions, réseau et financement">
     <div class="wrap">
       <div class="bloc">
@@ -526,6 +544,7 @@ a.logo-projet{text-decoration:none}
   const btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
   btn.addEventListener('click',()=>{const o=nav.classList.toggle('ouvert');btn.setAttribute('aria-expanded',o)});
   nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('ouvert');btn.setAttribute('aria-expanded','false')}});
+  document.querySelectorAll('[data-yt]').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0';f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;b.replaceWith(f)}));
 </script>
 </body>
 </html>
