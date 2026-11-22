@@ -159,10 +159,9 @@ p{margin:0}
 
 /* Actualités */
 .actualites{background:var(--creme);padding:88px 0}
-.actus{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+.actus{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .actu{display:flex;flex-direction:column;gap:12px}
 .actu img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
-.actu:first-child img{aspect-ratio:16/11}
 .actu time{font-size:.88rem;font-weight:700;color:var(--cuivre);font-variant-numeric:tabular-nums}
 .actu p{color:var(--texte-doux)}
 
@@ -204,8 +203,7 @@ textarea{min-height:120px;resize:vertical}
   .chiffre:nth-child(3){border-left:0;padding-left:0}
   .dims{grid-template-columns:1fr 1fr}
   .actus{grid-template-columns:1fr 1fr}
-  .actu:first-child{grid-column:1/-1}
-  .sentier{grid-template-columns:1fr 1fr;row-gap:32px}
+    .sentier{grid-template-columns:1fr 1fr;row-gap:32px}
   .sentier::before{display:none}
 }
 @media (max-width:860px){
@@ -479,6 +477,12 @@ textarea{min-height:120px;resize:vertical}
           <time datetime="2026-03-29">29 mars 2026</time>
           <h3>Grand prix Innovation à Expo-sciences 2026</h3>
           <p>Émile et Hadrien remportent le Grand prix Innovation à Expo-sciences Hydro-Québec, à Gatineau.</p>
+        </article>
+        <article class="actu">
+          <img src="assets/osentreprendre-2025.jpg" alt="Émilie Stuart, souriante, au gala régional du Défi OSEntreprendre">
+          <time datetime="2025-04-30">30 avril 2025</time>
+          <h3>Prix étudiant au Défi OSEntreprendre</h3>
+          <p>Émilie Stuart remporte le prix étudiant régional du Défi OSEntreprendre : l'innovation scientifique, c'est aussi de l'entrepreneuriat.</p>
         </article>
       </div>
     </div>
