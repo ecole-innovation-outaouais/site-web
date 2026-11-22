@@ -148,9 +148,13 @@ p{margin:0}
 
 /* Projets de l'équipe iGEM */
 .equipe-igem{padding:0 0 96px}
-.saisons{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
-.saison{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;background:var(--blanc)}
-.saison img{width:100%;height:100%;object-fit:cover}
+.saisons{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+.saison{display:flex;flex-direction:column;border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;background:var(--blanc)}
+.saison.courante{border-color:var(--petrole);box-shadow:0 0 0 2px var(--petrole) inset}
+.logo-projet{display:flex;align-items:center;justify-content:center;height:220px;padding:28px 32px;background:#fff;border-bottom:1px solid var(--trait)}
+.logo-projet.sombre{background:#7FA7C9;border-bottom:0}
+.logo-projet img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.carte .logo-projet{height:auto;aspect-ratio:4/3}
 .saison .corps{padding:22px;display:flex;flex-direction:column;gap:8px}
 .saison .annee{font:700 .85rem var(--corps);color:var(--cuivre);letter-spacing:.04em}
 .saison p{color:var(--texte-doux)}
@@ -165,8 +169,8 @@ p{margin:0}
 .fait{background:var(--blanc);border-radius:12px;padding:14px}
 .fait strong{display:block;font:800 1.5rem/1.1 var(--display);color:var(--petrole)}
 .fait span{font-size:.88rem;color:var(--texte-doux)}
-@media (max-width:980px){.saisons,.vigil{grid-template-columns:1fr}.vigil img{max-height:340px}}
-@media (max-width:600px){.saison{grid-template-columns:1fr}.saison img{aspect-ratio:4/3}.faits{grid-template-columns:1fr}}
+@media (max-width:980px){.saisons,.vigil{grid-template-columns:1fr}.vigil img{max-height:340px}.logo-projet{height:180px}}
+@media (max-width:600px){.faits{grid-template-columns:1fr}}
 
 
 .commandite{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--nuit);color:var(--blanc);border-radius:var(--r);padding:26px 30px}
@@ -385,7 +389,7 @@ textarea{min-height:120px;resize:vertical}
       </div>
       <div class="cartes">
         <article class="carte">
-          <img src="assets/unite.jpg" alt="Illustration de la plateforme UNITE et des cinq milieux qu'elle relie : forêts, eaux douces, sols agricoles, milieux industriels et santé">
+          <div class="logo-projet sombre"><img src="assets/logo-unite.png" alt="Logo UNITE"></div>
           <div class="corps">
             <span class="theme">Innovation · iGEM 2027</span>
             <h3>UNITE</h3>
@@ -422,7 +426,7 @@ textarea{min-height:120px;resize:vertical}
       <p class="lead" style="margin-top:12px">Chaque année, l'équipe choisit un problème réel, conçoit une solution en biologie synthétique et la défend devant le monde au Grand Jamboree de Paris.</p>
       <div class="saisons">
         <article class="saison">
-          <img src="assets/time2act.jpg" alt="Logo du projet TIME2ACT : un sablier et le nom TIME² ACT">
+          <div class="logo-projet"><img src="assets/logo-time2act.png" alt="Logo du projet TIME2ACT : un sablier et le nom TIME² ACT"></div>
           <div class="corps">
             <span class="annee">2023-2024 · Plastiques</span>
             <h3>TIME2ACT</h3>
@@ -432,13 +436,23 @@ textarea{min-height:120px;resize:vertical}
           </div>
         </article>
         <article class="saison">
-          <img src="assets/logo-une-seule-sante-outaouais.jpg" alt="Logo Une seule santé Outaouais : une poule, un arbre, une vache et une personne reliés par une rivière">
+          <div class="logo-projet"><img src="assets/logo-oho.png" alt="Logo Une seule santé Outaouais : une poule, un arbre, une vache et une personne reliés par une rivière"></div>
           <div class="corps">
             <span class="annee">2024-2025 · Antibiorésistance</span>
             <h3>One Health Outaouais</h3>
             <p>Comment le fumier épandu dans nos champs propage-t-il la résistance aux antibiotiques ? Grâce à l'ADN environnemental et à un séquenceur portable MinION, l'équipe cartographie les gènes de résistance dans les sols, les eaux de ruissellement et les engrais organiques de la région, et met au point des tests de surveillance rapides.</p>
             <span class="medaille">Médaille d'argent · Paris 2025</span>
             <div class="liens"><a href="https://2025.igem.wiki/outaouais/" target="_blank" rel="noopener">Wiki iGEM 2025</a><a href="https://equipeigemoutaouais.com/notre-projet/" target="_blank" rel="noopener">Le projet en détail</a></div>
+          </div>
+        </article>
+        <article class="saison courante">
+          <div class="logo-projet sombre"><img src="assets/logo-unite.png" alt="Logo UNITE, United Network for modular and Interoperable Technologies for Ecosystem health and protection : une tête de cheval en mosaïque"></div>
+          <div class="corps">
+            <span class="annee">2026-2027 · Biodétection · En cours</span>
+            <h3>UNITE</h3>
+            <p>Des solutions modulaires de biodétection pour répondre aux questions des citoyens : l'eau de mon puits, les cyanobactéries de mon lac, la tique qui m'a piqué, les espèces envahissantes.</p>
+            <span class="medaille">Grand Jamboree · Paris, octobre 2027</span>
+            <div class="liens"><a href="participer.html">Participer</a><a href="https://www.zeffy.com/fr-CA/ticketing/plan-de-commandite-igem-outaouais-2026--2027" target="_blank" rel="noopener">Commanditer</a></div>
           </div>
         </article>
       </div>

@@ -148,9 +148,13 @@ p{margin:0}
 
 /* Projets de l'équipe iGEM */
 .equipe-igem{padding:0 0 96px}
-.saisons{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
-.saison{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;background:var(--blanc)}
-.saison img{width:100%;height:100%;object-fit:cover}
+.saisons{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+.saison{display:flex;flex-direction:column;border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;background:var(--blanc)}
+.saison.courante{border-color:var(--petrole);box-shadow:0 0 0 2px var(--petrole) inset}
+.logo-projet{display:flex;align-items:center;justify-content:center;height:220px;padding:28px 32px;background:#fff;border-bottom:1px solid var(--trait)}
+.logo-projet.sombre{background:#7FA7C9;border-bottom:0}
+.logo-projet img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.carte .logo-projet{height:auto;aspect-ratio:4/3}
 .saison .corps{padding:22px;display:flex;flex-direction:column;gap:8px}
 .saison .annee{font:700 .85rem var(--corps);color:var(--cuivre);letter-spacing:.04em}
 .saison p{color:var(--texte-doux)}
@@ -165,8 +169,8 @@ p{margin:0}
 .fait{background:var(--blanc);border-radius:12px;padding:14px}
 .fait strong{display:block;font:800 1.5rem/1.1 var(--display);color:var(--petrole)}
 .fait span{font-size:.88rem;color:var(--texte-doux)}
-@media (max-width:980px){.saisons,.vigil{grid-template-columns:1fr}.vigil img{max-height:340px}}
-@media (max-width:600px){.saison{grid-template-columns:1fr}.saison img{aspect-ratio:4/3}.faits{grid-template-columns:1fr}}
+@media (max-width:980px){.saisons,.vigil{grid-template-columns:1fr}.vigil img{max-height:340px}.logo-projet{height:180px}}
+@media (max-width:600px){.faits{grid-template-columns:1fr}}
 
 
 .commandite{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--nuit);color:var(--blanc);border-radius:var(--r);padding:26px 30px}
