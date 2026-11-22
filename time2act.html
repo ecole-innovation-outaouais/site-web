@@ -449,7 +449,20 @@ a.logo-projet{text-decoration:none}
         </div>
         <div class="bloc">
           <h2>Les jeunes derrière le projet</h2>
-          <p>Une cinquantaine de jeunes du secondaire, du cégep et de l'université, accompagnés d'une douzaine de mentors, réunis dans la toute première équipe iGEM de l'Outaouais.</p>
+          <p>Une cinquantaine de jeunes et de mentors du secondaire, du cégep et de l'université, issus de trois établissements de Gatineau, réunis dans la toute première équipe iGEM de l'Outaouais.</p>
+        </div>
+        <div class="bloc">
+          <h2>En vidéo</h2>
+          <div class="videos" style="margin-top:0">
+            <article class="vid">
+              <button type="button" data-embed="https://video.igem.org/videos/embed/dVFbKrSo8WyK4ULm87A3Wf?autoplay=1" aria-label="Lire la vidéo : La présentation au Grand Jamboree"><img src="https://video.igem.org/lazy-static/thumbnails/42318561-ac0d-49f9-8617-1809417a22ec.jpg" alt="" loading="lazy"></button>
+              <div class="corps"><h3>La présentation au Grand Jamboree</h3><p>Paris 2024, 14 minutes, en anglais</p></div>
+            </article>
+            <article class="vid">
+              <button type="button" data-embed="https://video.igem.org/videos/embed/85ihFQ2gx6rvu6No1avtUX?autoplay=1" aria-label="Lire la vidéo : La vidéo promotionnelle"><img src="https://video.igem.org/lazy-static/thumbnails/0e0d5087-a845-48db-8e8d-892f9295bf2d.jpg" alt="" loading="lazy"></button>
+              <div class="corps"><h3>La vidéo promotionnelle</h3><p>2 minutes, en anglais</p></div>
+            </article>
+          </div>
         </div>
       </div>
       <aside class="palmares">
@@ -461,9 +474,9 @@ a.logo-projet{text-decoration:none}
           <li><span class="an">2025</span><strong>Défi OSEntreprendre</strong><span class=det>Premier prix régional</span></li>
         </ol>
         <div class="liens2">
+          <a href="https://teams.igem.org/5197" target=_blank rel=noopener>Fiche de l'équipe sur iGEM →</a>
           <a href="https://2024.igem.wiki/outaouais/" target=_blank rel=noopener>Wiki iGEM 2024 →</a>
           <a href="https://equipeigemoutaouais.com/2024/09/06/remise-de-la-video-promotionnelle/" target=_blank rel=noopener>Vidéo promotionnelle →</a>
-          <a href="projets.html#videos">La médaille en vidéo →</a>
         </div>
       </aside>
     </div>
@@ -510,6 +523,7 @@ a.logo-projet{text-decoration:none}
   const btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
   btn.addEventListener('click',()=>{const o=nav.classList.toggle('ouvert');btn.setAttribute('aria-expanded',o)});
   nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('ouvert');btn.setAttribute('aria-expanded','false')}});
+  document.querySelectorAll('[data-embed]').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src=b.dataset.embed;f.title=b.getAttribute('aria-label');f.allow='autoplay; fullscreen; picture-in-picture';f.allowFullscreen=true;f.setAttribute('sandbox','allow-same-origin allow-scripts allow-popups');b.replaceWith(f)}));
 </script>
 </body>
 </html>
