@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projets · École de l'innovation en Outaouais</title>
+<meta name="description" content="UNITE, A.G.I.R.² et BioSTIM, TIME2ACT, One Health Outaouais et VIGIL | FARM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Palette de la maquette EIO */
+  --petrole:#245A67; --nuit:#173642; --gris:#667C85; --sauge:#8FAF9A;
+  --cuivre:#B76E4A; --sable:#E5C46B; --creme:#F6F3ED; --blanc:#FCFBF8;
+  --texte:#173642; --texte-doux:#4F6670; --trait:#DCD8CE;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --corps:"Atkinson Hyperlegible", "Segoe UI", Roboto, sans-serif;
+  --r:14px; --max:1180px;
+  /* Idée de mise en page : un sentier qui relie trois portes d'entrée (jeunes, enseignants, chercheurs) à travers la photo de terrain */
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--blanc);color:var(--texte);font:400 1.0625rem/1.6 var(--corps)}
+img,video{max-width:100%;display:block}
+a{color:var(--petrole)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--sable);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:700}
+p{margin:0}
+.wrap{width:min(var(--max),100% - 40px);margin-inline:auto}
+.eyebrow{font:700 .8rem/1 var(--corps);letter-spacing:.14em;text-transform:uppercase;color:var(--cuivre)}
+.lead{font-size:1.18rem;color:var(--texte-doux);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:.85em 1.3em;border-radius:999px;font:700 1rem/1 var(--corps);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s, background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primaire{background:var(--petrole);color:var(--blanc)}
+.btn-accent{background:var(--sable);color:var(--nuit)}
+.btn-contour{border-color:currentColor;color:var(--blanc);background:transparent}
+.fleche{width:1.1em;height:1.1em}
+
+/* En-tête */
+.entete{position:sticky;top:0;z-index:20;background:rgba(252,251,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+.entete .wrap{display:flex;align-items:center;gap:24px;height:72px}
+.logo img{height:44px;width:auto}
+.nav{display:flex;gap:4px;margin-left:auto;align-items:center;flex-wrap:wrap}
+.nav a{font-weight:700;font-size:.95rem;color:var(--nuit);text-decoration:none;padding:.55em .8em;border-radius:8px}
+.nav a:hover{background:var(--creme)}
+.nav .btn{margin-left:8px;padding:.7em 1.1em;color:var(--blanc)}
+.nav .btn:hover{background:var(--nuit)}
+.menu-btn{display:none;margin-left:auto;background:none;border:0;font:700 1rem var(--corps);color:var(--nuit);padding:.5em}
+
+/* Héros */
+.heros{position:relative;color:var(--blanc);isolation:isolate}
+.heros>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;z-index:-2}
+.heros::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(23,54,66,.92) 0%,rgba(23,54,66,.72) 42%,rgba(23,54,66,.15) 100%),linear-gradient(0deg,rgba(23,54,66,.55),transparent 45%)}
+.heros .wrap{padding:96px 0 170px}
+.heros .eyebrow{color:var(--sable)}
+.heros h1{font-size:clamp(2.6rem,6.4vw,5.4rem);font-weight:800;margin:.35em 0 .3em;max-width:12ch}
+.heros h1 span{display:block}
+.heros h1 span:nth-child(2){color:var(--sauge)}
+.heros h1 span:nth-child(3){color:var(--sable)}
+.heros p{font-size:1.25rem;max-width:44ch;color:#E8EEF0}
+.heros .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media (prefers-reduced-motion:no-preference){
+  .heros h1 span{animation:monte .7s cubic-bezier(.2,.7,.2,1) both}
+  .heros h1 span:nth-child(2){animation-delay:.12s}
+  .heros h1 span:nth-child(3){animation-delay:.24s}
+  @keyframes monte{from{transform:translateY(14px);opacity:.25}to{transform:none;opacity:1}}
+}
+
+/* Portes d'entrée */
+.portes{margin-top:-110px;position:relative;z-index:2}
+.portes .grille{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.porte{background:var(--blanc);border-radius:var(--r);overflow:hidden;box-shadow:0 18px 40px -18px rgba(23,54,66,.35);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s}
+.porte:hover{transform:translateY(-4px)}
+.porte img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.porte .corps{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.porte .qui{display:flex;align-items:center;gap:10px}
+.porte .pastille{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none}
+.porte .pastille svg{width:20px;height:20px}
+.porte p{color:var(--texte-doux)}
+.porte .lien{margin-top:auto;padding-top:8px;font-weight:700;color:var(--petrole);display:flex;align-items:center;gap:.4em}
+.p-jeunes .pastille{background:var(--sable);color:var(--nuit)}
+.p-ens .pastille{background:var(--sauge);color:var(--nuit)}
+.p-cher .pastille{background:var(--cuivre);color:var(--blanc)}
+
+/* Manifeste */
+.manifeste{padding:96px 0 88px}
+.manifeste blockquote{margin:0;font:800 clamp(1.9rem,4.4vw,3.4rem)/1.1 var(--display);color:var(--nuit);max-width:20ch;letter-spacing:-.015em}
+.manifeste blockquote em{font-style:normal;color:var(--cuivre)}
+.manifeste .cols{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end}
+.manifeste .texte{display:grid;gap:14px;color:var(--texte-doux)}
+.chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid var(--trait)}
+.chiffre{padding:22px 20px 0 0}
+.chiffre+.chiffre{padding-left:20px;border-left:1px solid var(--trait)}
+.chiffre strong{display:block;font:800 clamp(2.2rem,4vw,3.2rem)/1 var(--display);color:var(--petrole);font-variant-numeric:tabular-nums}
+.chiffre span{display:block;margin-top:8px;font-size:.95rem;color:var(--texte-doux)}
+
+/* Activités / sentier */
+.activites{background:var(--creme);padding:88px 0}
+.entete-section{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.entete-section .lead{margin-top:12px}
+.sentier{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:8px 0 48px}
+.sentier::before{content:"";position:absolute;top:27px;left:6%;right:6%;border-top:3px dashed var(--sauge);z-index:0}
+.etape{position:relative;z-index:1}
+.etape .borne{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font:800 1.15rem var(--display);border:4px solid var(--creme)}
+.etape:nth-child(1) .borne{background:var(--petrole);color:var(--blanc)}
+.etape:nth-child(2) .borne{background:var(--sauge);color:var(--nuit)}
+.etape:nth-child(3) .borne{background:var(--sable);color:var(--nuit)}
+.etape:nth-child(4) .borne{background:var(--cuivre);color:var(--blanc)}
+.etape h3{margin:16px 0 6px}
+.etape .niveau{font-size:.85rem;font-weight:700;color:var(--cuivre);text-transform:uppercase;letter-spacing:.08em}
+.etape p{color:var(--texte-doux);font-size:.98rem;margin-top:6px}
+.domaines{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.domaine{background:var(--blanc);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.domaine img{width:100%;height:100%;object-fit:cover;min-height:260px}
+.domaine .corps{padding:26px;display:flex;flex-direction:column;gap:12px}
+.domaine ul{margin:0;padding-left:1.1em;color:var(--texte-doux)}
+.puce{align-self:flex-start;font:700 .78rem/1 var(--corps);letter-spacing:.06em;text-transform:uppercase;padding:.5em .8em;border-radius:999px}
+.puce.actif{background:#DCE8E0;color:#2E5A41}
+.puce.bientot{background:#F6E7BF;color:#6B5317}
+.domaine.dev img{filter:saturate(.75)}
+
+/* Vidéo */
+.video{background:var(--nuit);color:var(--blanc);padding:88px 0}
+.video .cols{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.video h2{color:var(--blanc)}
+.video .eyebrow{color:var(--sable)}
+.video p{color:#D3DEE2;margin-top:16px}
+.video ol{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:g}
+.video li{display:flex;gap:14px;align-items:baseline;counter-increment:g}
+.video li::before{content:counter(g,decimal-leading-zero);font:800 .95rem var(--display);color:var(--sable);min-width:2ch}
+.cadre-video{border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);max-width:440px;justify-self:center;background:#000}
+.cadre-video video{width:100%;aspect-ratio:4/5;object-fit:cover}
+
+/* Projets */
+.projets{padding:96px 0}
+.cartes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.carte{display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;background:var(--blanc);border:1px solid var(--trait)}
+.carte img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.carte .corps{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.carte .theme{font-size:.85rem;font-weight:700;color:var(--cuivre)}
+.carte p{color:var(--texte-doux)}
+.carte .lien{margin-top:auto;font-weight:700;display:flex;gap:.4em;align-items:center;text-decoration:none}
+
+
+/* Projets de l'équipe iGEM */
+.equipe-igem{padding:0 0 96px}
+.saisons{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.saison{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;background:var(--blanc)}
+.saison img{width:100%;height:100%;object-fit:cover}
+.saison .corps{padding:22px;display:flex;flex-direction:column;gap:8px}
+.saison .annee{font:700 .85rem var(--corps);color:var(--cuivre);letter-spacing:.04em}
+.saison p{color:var(--texte-doux)}
+.saison .medaille{align-self:flex-start;margin-top:4px;font:700 .8rem/1 var(--corps);padding:.5em .8em;border-radius:999px;background:#ECEFF1;color:#3E5560}
+.vigil{margin-top:24px;display:grid;grid-template-columns:1fr 1.15fr;gap:0;border-radius:var(--r);overflow:hidden;background:#E3ECE5}
+.vigil img{width:100%;height:100%;object-fit:contain;background:var(--blanc);padding:16px}
+.vigil .corps{padding:36px;display:flex;flex-direction:column;gap:14px}
+.vigil .eyebrow{color:#2E5A41}
+.vigil h3{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800}
+.vigil p{color:#30483A}
+.faits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.fait{background:var(--blanc);border-radius:12px;padding:14px}
+.fait strong{display:block;font:800 1.5rem/1.1 var(--display);color:var(--petrole)}
+.fait span{font-size:.88rem;color:var(--texte-doux)}
+@media (max-width:980px){.saisons,.vigil{grid-template-columns:1fr}.vigil img{max-height:340px}}
+@media (max-width:600px){.saison{grid-template-columns:1fr}.saison img{aspect-ratio:4/3}.faits{grid-template-columns:1fr}}
+
+
+.commandite{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--nuit);color:var(--blanc);border-radius:var(--r);padding:26px 30px}
+.commandite h3{color:var(--blanc)}
+.commandite p{color:#D3DEE2;margin-top:6px;max-width:60ch}
+
+.saison .liens{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
+.saison .liens a{font-size:.92rem;font-weight:700}
+/* Dimensions */
+.dimensions{padding:0 0 96px}
+.dims{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.dim{border-radius:var(--r);padding:26px 22px 28px;min-height:230px;display:flex;flex-direction:column;gap:10px}
+.dim .verbe{font:800 2rem/1 var(--display)}
+.dim .nom{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.85}
+.dim p{margin-top:auto;font-size:.98rem}
+.d1{background:var(--petrole);color:var(--blanc)}
+.d2{background:var(--cuivre);color:var(--blanc)}
+.d3{background:var(--sable);color:var(--nuit)}
+.d4{background:var(--sauge);color:var(--nuit)}
+
+/* Actualités */
+.actualites{background:var(--creme);padding:88px 0}
+.actus{display:grid;grid-template-columns:repeat(4,1fr);gap:32px 24px}
+.actu{display:flex;flex-direction:column;gap:12px}
+.actu img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+.actu time{font-size:.88rem;font-weight:700;color:var(--cuivre);font-variant-numeric:tabular-nums}
+.actu p{color:var(--texte-doux)}
+
+/* Participer */
+.participer{padding:96px 0}
+.participer .cols{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
+.options{display:grid;gap:14px;margin-top:28px}
+.option{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--trait);border-radius:var(--r);background:var(--blanc)}
+.option .pastille{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--creme);color:var(--petrole)}
+.option .pastille svg{width:22px;height:22px}
+.option p{color:var(--texte-doux);font-size:.97rem}
+form{background:var(--creme);border-radius:var(--r);padding:28px;display:grid;gap:16px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-weight:700;font-size:.92rem}
+input,select,textarea{font:400 1rem var(--corps);padding:.75em .85em;border:1px solid #C9C4B8;border-radius:10px;background:var(--blanc);color:var(--texte)}
+textarea{min-height:120px;resize:vertical}
+.note{font-size:.9rem;color:var(--texte-doux)}
+.confirmation{display:none;background:#DCE8E0;color:#22452F;border-radius:10px;padding:14px 16px}
+
+
+/* Chercheurs */
+.chercheurs{padding:88px 0;background:var(--creme)}
+.groupes{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-top:36px}
+.groupe h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--cuivre);margin-bottom:14px;font-family:var(--corps)}
+.personnes{display:grid;gap:12px}
+.groupe.sebo .personnes{grid-template-columns:1fr 1fr}
+.personne{display:flex;gap:14px;align-items:flex-start;background:var(--blanc);border-radius:12px;padding:16px}
+.initiales{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:800 1rem var(--display);background:var(--petrole);color:var(--blanc)}
+.groupe.uo .initiales{background:var(--cuivre)}
+.groupe.uqo .initiales{background:var(--sauge);color:var(--nuit)}
+.personne strong{display:block;font:700 1.02rem var(--display);color:var(--nuit)}
+.personne div > span{display:block;font-size:.92rem;color:var(--texte-doux)}
+.personne a{font-size:.9rem;font-weight:700}
+@media (max-width:980px){.groupes{grid-template-columns:1fr}.groupe.sebo .personnes{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.groupe.sebo .personnes{grid-template-columns:1fr}}
+
+/* Réseau + pied */
+.reseau{border-top:1px solid var(--trait);padding:48px 0}
+.reseau .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center}
+.reseau .eyebrow{color:var(--gris);margin-right:16px}
+.reseau span.part{font:700 1.05rem var(--display);color:var(--nuit)}
+.pied{background:var(--nuit);color:#C9D6DB;padding:64px 0 32px}
+.pied .grille{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.pied img{height:52px;width:auto;margin-bottom:16px}
+.pied h3{color:var(--blanc);font-size:1rem;margin-bottom:12px}
+.pied a{color:#E8EEF0;text-decoration:none}
+.pied a:hover{text-decoration:underline}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pied .bas{margin-top:48px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.88rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Réactif */
+@media (max-width:980px){
+  .portes .grille,.cartes{grid-template-columns:1fr 1fr}
+  .manifeste .cols,.video .cols,.participer .cols,.domaines{grid-template-columns:1fr}
+  .chiffres{grid-template-columns:1fr 1fr}
+  .chiffre:nth-child(3){border-left:0;padding-left:0}
+  .dims{grid-template-columns:1fr 1fr}
+  .actus{grid-template-columns:1fr 1fr}
+    .sentier{grid-template-columns:1fr 1fr;row-gap:32px}
+  .sentier::before{display:none}
+}
+@media (max-width:860px){
+  .nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--blanc);flex-direction:column;align-items:stretch;padding:12px 20px 20px;border-bottom:1px solid var(--trait)}
+  .nav.ouvert{display:flex}
+  .nav .btn{margin:8px 0 0;justify-content:center}
+  .menu-btn{display:block}
+}
+@media (max-width:600px){
+  .portes .grille,.cartes,.dims,.actus,.chiffres,.champs,.pied .grille{grid-template-columns:1fr}
+  .chiffre+.chiffre{border-left:0;padding-left:0}
+  .domaine{grid-template-columns:1fr}
+  .domaine img{min-height:200px}
+  .sentier{grid-template-columns:1fr}
+  .heros .wrap{padding:64px 0 150px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+
+/* Pages intérieures */
+.nav a.actif{background:var(--creme);color:var(--petrole)}
+.titre-page{background:var(--nuit);color:var(--blanc);padding:72px 0 64px}
+.titre-page .eyebrow{color:var(--sable)}
+.titre-page h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;margin:.3em 0 .25em;max-width:18ch}
+.titre-page p{color:#D3DEE2;font-size:1.18rem;max-width:60ch}
+.page-section{padding:80px 0}
+.page-section.alt{background:var(--creme)}
+.plus{display:flex;justify-content:center;margin-top:36px}
+.bande-cta{background:var(--petrole);color:var(--blanc);padding:56px 0}
+.bande-cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.bande-cta h2{color:var(--blanc);font-size:clamp(1.6rem,3vw,2.3rem)}
+.bande-cta p{color:#D3DEE2;margin-top:8px;max-width:56ch}
+.offres{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.offre{background:var(--blanc);border:1px solid var(--trait);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:8px}
+.offre .num{font:800 .9rem var(--display);color:var(--cuivre)}
+.offre p{color:var(--texte-doux)}
+.deux{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.deux img{border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover}
+.sequences{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}
+.sequence{background:var(--blanc);border-radius:12px;padding:18px;border-top:0}
+.sequence strong{display:block;font:800 1.05rem var(--display);color:var(--petrole)}
+.sequence span{display:block;color:var(--texte-doux);font-size:.93rem;margin-top:6px}
+.axes{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.axe{background:var(--blanc);border-radius:var(--r);overflow:hidden;border:1px solid var(--trait);display:flex;flex-direction:column}
+.axe img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.axe .corps{padding:24px;display:flex;flex-direction:column;gap:10px}
+.axe p,.axe li{color:var(--texte-doux)}
+.axe ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+@media (max-width:980px){.offres{grid-template-columns:1fr 1fr}.deux,.axes{grid-template-columns:1fr}.sequences{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.offres,.sequences{grid-template-columns:1fr}}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fiole" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3M7.5 15h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-livre" viewBox="0 0 24 24"><path d="M12 6.5C10.3 5 7.8 4.5 4 4.5v14c3.8 0 6.3.5 8 2 1.7-1.5 4.2-2 8-2v-14c-3.8 0-6.3.5-8 2zM12 6.5v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-loupe" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l5.5 5.5M8 10.5h5M10.5 8v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-ampoule" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mains" viewBox="0 0 24 24"><path d="M3 12l4-4 4 3 2-1.5 3 2.5M21 12l-4-4-3 1M7 8l-1 9 4 3 3-2 3 2 4-3-1-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-agenda" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="entete">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="École de l'innovation en Outaouais, accueil"><img src="assets/logo-eio.png" alt="EIO, École de l'innovation en Outaouais"></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="activites.html">Activités</a>
+      <a href="projets.html" class="actif" aria-current="page">Projets</a>
+      <a href="enseignants.html">Enseignants</a>
+      <a href="recherche.html">Recherche</a>
+      <a href="a-propos.html">À propos</a>
+      <a class="btn btn-primaire" href="participer.html">Participer</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+  <section class="titre-page">
+    <div class="wrap">
+      <p class="eyebrow">Projets</p>
+      <h1>Nos projets</h1>
+      <p>Biodétection citoyenne, microbiomes des bâtiments, plastiques et antibiorésistance : chaque projet part d'un enjeu réel de l'Outaouais.</p>
+    </div>
+  </section>
+  <section class="projets" id="projets" aria-labelledby="t-projets">
+    <div class="wrap">
+      <div class="entete-section">
+        <div>
+          <p class="eyebrow">Projets en vedette</p>
+          <h2 id="t-projets">Des questions de notre territoire</h2>
+          <p class="lead">Chaque projet part d'une question que des citoyens, des écoles ou des organismes se posent vraiment.</p>
+        </div>
+      </div>
+      <div class="cartes">
+        <article class="carte">
+          <img src="assets/unite.jpg" alt="Illustration de la plateforme UNITE et des cinq milieux qu'elle relie : forêts, eaux douces, sols agricoles, milieux industriels et santé">
+          <div class="corps">
+            <span class="theme">Innovation · iGEM 2027</span>
+            <h3>UNITE</h3>
+            <p>Des solutions modulaires de biodétection pour répondre aux questions des citoyens : l'eau de mon puits, les cyanobactéries de mon lac, la tique qui m'a piqué, les espèces envahissantes.</p>
+            <a class="lien" href="participer.html">En savoir plus <svg class="fleche"><use href="#i-fleche"/></svg></a>
+          </div>
+        </article>
+        <article class="carte">
+          <img src="assets/agir2-levain-sentinelle.jpg" alt="Affiche du projet A.G.I.R.² Levain sentinelle : un pot de levain dont les microorganismes réagissent à l'environnement bâti de l'école">
+          <div class="corps">
+            <span class="theme">Recherche-action · Science citoyenne</span>
+            <h3>A.G.I.R.² et BioSTIM</h3>
+            <p>Les microbes de nos bâtiments, sentinelles de la santé des milieux intérieurs, à Gatineau et à Rouyn-Noranda. Avec des séquences BioSTIM pour faire entrer cette recherche dans les classes.</p>
+            <a class="lien" href="participer.html">En savoir plus <svg class="fleche"><use href="#i-fleche"/></svg></a>
+          </div>
+        </article>
+        <article class="carte">
+          <img src="assets/igem-paris-2025.jpg" alt="Les membres de l'équipe iGEM Outaouais au Grand Jamboree de Paris en 2025">
+          <div class="corps">
+            <span class="theme">Projets jeunesse</span>
+            <h3>iGEM Outaouais</h3>
+            <p>Fondée en 2023, la seule équipe iGEM canadienne pilotée par un collège. Des élèves du secondaire et du collégial qui conçoivent des solutions de biologie synthétique.</p>
+            <a class="lien" href="https://equipeigemoutaouais.com/" target="_blank" rel="noopener">Visiter le site de l'équipe <svg class="fleche"><use href="#i-fleche"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="equipe-igem" aria-labelledby="t-igem">
+    <div class="wrap">
+      <p class="eyebrow">Les projets de l'équipe iGEM Outaouais</p>
+      <h2 id="t-igem">Trois saisons, trois réponses à des enjeux d'ici</h2>
+      <p class="lead" style="margin-top:12px">Chaque année, l'équipe choisit un problème réel, conçoit une solution en biologie synthétique et la défend devant le monde au Grand Jamboree de Paris.</p>
+      <div class="saisons">
+        <article class="saison">
+          <img src="assets/time2act.jpg" alt="Logo du projet TIME2ACT : un sablier et le nom TIME² ACT">
+          <div class="corps">
+            <span class="annee">2023-2024 · Plastiques</span>
+            <h3>TIME2ACT</h3>
+            <p>Transformer les plastiques PET que le recyclage n'accepte pas, comme les barquettes opaques ou thermoformées, en matériaux mésoporeux à haute valeur, utiles pour capter le carbone et soutenir la transition énergétique.</p>
+            <span class="medaille">Médaille d'argent · Paris 2024</span>
+            <div class="liens"><a href="https://2024.igem.wiki/outaouais/" target="_blank" rel="noopener">Wiki iGEM 2024</a><a href="https://equipeigemoutaouais.com/2024/09/06/remise-de-la-video-promotionnelle/" target="_blank" rel="noopener">Vidéo promotionnelle</a></div>
+          </div>
+        </article>
+        <article class="saison">
+          <img src="assets/logo-une-seule-sante-outaouais.jpg" alt="Logo Une seule santé Outaouais : une poule, un arbre, une vache et une personne reliés par une rivière">
+          <div class="corps">
+            <span class="annee">2024-2025 · Antibiorésistance</span>
+            <h3>One Health Outaouais</h3>
+            <p>Comment le fumier épandu dans nos champs propage-t-il la résistance aux antibiotiques ? Grâce à l'ADN environnemental et à un séquenceur portable MinION, l'équipe cartographie les gènes de résistance dans les sols, les eaux de ruissellement et les engrais organiques de la région, et met au point des tests de surveillance rapides.</p>
+            <span class="medaille">Médaille d'argent · Paris 2025</span>
+            <div class="liens"><a href="https://2025.igem.wiki/outaouais/" target="_blank" rel="noopener">Wiki iGEM 2025</a><a href="https://equipeigemoutaouais.com/notre-projet/" target="_blank" rel="noopener">Le projet en détail</a></div>
+          </div>
+        </article>
+      </div>
+      <article class="vigil" aria-labelledby="t-vigil">
+        <img src="assets/vigil-farm-logos.jpg" alt="Les six déclinaisons du logo VIGIL FARM, une ferme avec grange, rivière et animal différent selon le type d'élevage">
+        <div class="corps">
+          <p class="eyebrow">De la recherche à l'entreprise</p>
+          <h3 id="t-vigil">VIGIL | FARM</h3>
+          <p>Né du projet One Health Outaouais, VIGIL | FARM est un test portable qui détecte les gènes de résistance aux antibiotiques directement à la ferme. Conçu avec et pour les producteurs de l'Outaouais, il aide à choisir le bon traitement, à protéger le troupeau et à limiter la propagation de l'antibiorésistance dans les sols et l'eau.</p>
+          <div class="faits">
+            <div class="fait"><strong>15 à 30 min</strong><span>pour un résultat, sur place, sans transporter les animaux</span></div>
+            <div class="fait"><strong>&lt; 30 $</strong><span>par test, pour les petites et moyennes fermes</span></div>
+            <div class="fait"><strong>~400</strong><span>fermes d'élevage en Outaouais, premier marché visé</span></div>
+          </div>
+        </div>
+      </article>
+      <div class="commandite">
+        <div>
+          <h3>Soutenez l'équipe iGEM Outaouais 2026-2027</h3>
+          <p>Entreprises, organismes et particuliers : votre commandite aide nos jeunes à développer UNITE et à représenter l'Outaouais au Grand Jamboree de Paris.</p>
+        </div>
+        <a class="btn btn-accent" href="https://www.zeffy.com/fr-CA/ticketing/plan-de-commandite-igem-outaouais-2026--2027" target="_blank" rel="noopener">Devenir commanditaire <svg class="fleche"><use href="#i-fleche"/></svg></a>
+      </div>
+    </div>
+  </section>
+  <section class="bande-cta">
+    <div class="wrap">
+      <div>
+        <h2>Et vous, comment voulez-vous participer ?</h2>
+        <p>Jeunes, enseignants, chercheurs, citoyens et partenaires : il y a une place pour vous à l'École.</p>
+      </div>
+      <a class="btn btn-accent" href="participer.html">Participer <svg class="fleche"><use href="#i-fleche"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="grille">
+      <div>
+        <img src="assets/logo-eio-clair.png" alt="EIO">
+        <p>Explorer, expérimenter, innover : la science au cœur de l'action.</p>
+        <p style="margin-top:14px">École de l'innovation (EIO)<br>Cégep de l'Outaouais, campus Gabrielle-Roy<br>Gatineau (Québec)</p>
+        <p style="margin-top:8px"><a href="participer.html">Écrivez-nous par le formulaire</a></p>
+      </div>
+      <div>
+        <h3>L'École</h3>
+        <ul><li><a href="activites.html">Activités</a></li><li><a href="projets.html">Projets</a></li><li><a href="enseignants.html">Enseignants</a></li><li><a href="recherche.html">Recherche</a></li><li><a href="a-propos.html">À propos</a></li></ul>
+      </div>
+      <div>
+        <h3>Nos équipes</h3>
+        <ul><li><a href="https://equipeigemoutaouais.com/" target="_blank" rel="noopener">Équipe iGEM Outaouais</a></li><li><a href="https://igem.org" target="_blank" rel="noopener">iGEM international</a></li><li><a href="a-propos.html">Centre SEBO</a></li><li><a href="participer.html">Participer</a></li><li><a href="https://www.zeffy.com/fr-CA/ticketing/plan-de-commandite-igem-outaouais-2026--2027" target="_blank" rel="noopener">Commanditer iGEM Outaouais</a></li></ul>
+      </div>
+    </div>
+    <div class="bas"><span>© 2026 École de l'innovation en Outaouais</span><span>Un projet du Centre SEBO et du Cégep de l'Outaouais</span></div>
+  </div>
+</footer>
+
+<script>
+  const btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',()=>{const o=nav.classList.toggle('ouvert');btn.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('ouvert');btn.setAttribute('aria-expanded','false')}});
+</script>
+</body>
+</html>
