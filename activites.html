@@ -113,10 +113,10 @@ p{margin:0}
 .etape h3{margin:16px 0 6px}
 .etape .niveau{font-size:.85rem;font-weight:700;color:var(--cuivre);text-transform:uppercase;letter-spacing:.08em}
 .etape p{color:var(--texte-doux);font-size:.98rem;margin-top:6px}
-.domaines{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
-.domaine{background:var(--blanc);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
-.domaine img{width:100%;height:100%;object-fit:cover;min-height:260px}
-.domaine .corps{padding:26px;display:flex;flex-direction:column;gap:12px}
+.domaines{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.domaine{background:var(--blanc);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.domaine img{width:100%;height:230px;object-fit:cover}
+.domaine .corps{padding:26px;display:flex;flex-direction:column;gap:12px;flex:1}
 .domaine ul{margin:0;padding-left:1.1em;color:var(--texte-doux)}
 .puce{align-self:flex-start;font:700 .78rem/1 var(--corps);letter-spacing:.06em;text-transform:uppercase;padding:.5em .8em;border-radius:999px}
 .puce.actif{background:#DCE8E0;color:#2E5A41}
@@ -484,6 +484,16 @@ a.logo-projet{text-decoration:none}
             <h3>Électronique, IoT et prototypage</h3>
             <p style="color:var(--texte-doux)">Capteurs, programmation et objets connectés pour transformer une idée en dispositif de terrain. Ce volet arrive bientôt.</p>
             <a href="participer.html" style="font-weight:700;margin-top:auto">Intéressé ? Faites-nous signe</a>
+          </div>
+        </article>
+        <article class="domaine">
+          <img src="assets/igem-paris-2025.jpg" alt="Les membres de l'équipe iGEM Outaouais au Grand Jamboree de Paris en 2025">
+          <div class="corps">
+            <span class="puce actif">Compétition internationale</span>
+            <h3>Équipe iGEM Outaouais</h3>
+            <p style="color:var(--texte-doux)">Fondée en 2023, la seule équipe iGEM au Canada menée par une institution non universitaire. Des élèves du secondaire et du cégep mènent un projet de biologie synthétique pendant 15 mois, jusqu'au Grand Jamboree de Paris.</p>
+            <a href="projets.html" style="font-weight:700;margin-top:auto">Les projets de l'équipe →</a>
+            <a href="https://equipeigemoutaouais.com/" target="_blank" rel="noopener" style="font-weight:700">Le site de l'équipe →</a>
           </div>
         </article>
       </div>

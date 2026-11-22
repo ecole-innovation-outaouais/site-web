@@ -113,10 +113,10 @@ p{margin:0}
 .etape h3{margin:16px 0 6px}
 .etape .niveau{font-size:.85rem;font-weight:700;color:var(--cuivre);text-transform:uppercase;letter-spacing:.08em}
 .etape p{color:var(--texte-doux);font-size:.98rem;margin-top:6px}
-.domaines{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
-.domaine{background:var(--blanc);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
-.domaine img{width:100%;height:100%;object-fit:cover;min-height:260px}
-.domaine .corps{padding:26px;display:flex;flex-direction:column;gap:12px}
+.domaines{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.domaine{background:var(--blanc);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.domaine img{width:100%;height:230px;object-fit:cover}
+.domaine .corps{padding:26px;display:flex;flex-direction:column;gap:12px;flex:1}
 .domaine ul{margin:0;padding-left:1.1em;color:var(--texte-doux)}
 .puce{align-self:flex-start;font:700 .78rem/1 var(--corps);letter-spacing:.06em;text-transform:uppercase;padding:.5em .8em;border-radius:999px}
 .puce.actif{background:#DCE8E0;color:#2E5A41}
@@ -501,35 +501,35 @@ a.logo-projet{text-decoration:none}
         <div>
           <p class="eyebrow">Projets en vedette</p>
           <h2 id="t-projets">Des questions de notre territoire</h2>
-          <p class="lead">Chaque projet part d'une question que des citoyens, des écoles ou des organismes se posent vraiment.</p>
+          <p class="lead">Chaque année, l'équipe iGEM Outaouais part d'une question que des citoyens, des producteurs ou des organismes se posent vraiment.</p>
         </div>
       </div>
       <div class="cartes">
         <article class="carte">
-          <div class="logo-projet sombre"><img src="assets/logo-unite.png" alt="Logo UNITE"></div>
+          <a class="logo-projet" href="time2act.html"><img src="assets/logo-time2act.png" alt="Logo TIME2ACT"></a>
           <div class="corps">
-            <span class="theme">Innovation · iGEM 2027</span>
+            <span class="theme">2023-2024 · Plastiques et climat</span>
+            <h3>TIME2ACT</h3>
+            <p>Transformer les plastiques PET que le recyclage refuse en matériaux capables de capter le carbone.</p>
+            <a class="lien" href="time2act.html">En savoir plus <svg class="fleche"><use href="#i-fleche"/></svg></a>
+          </div>
+        </article>
+        <article class="carte">
+          <a class="logo-projet" href="one-health-outaouais.html"><img src="assets/logo-oho.png" alt="Logo Une seule santé Outaouais"></a>
+          <div class="corps">
+            <span class="theme">2024-2025 · Antibiorésistance</span>
+            <h3>One Health Outaouais</h3>
+            <p>Répondre à la crise de l'antibiorésistance, du sol à l'animal et à l'eau, avec sa solution VIGIL | FARM.</p>
+            <a class="lien" href="one-health-outaouais.html">En savoir plus <svg class="fleche"><use href="#i-fleche"/></svg></a>
+          </div>
+        </article>
+        <article class="carte">
+          <a class="logo-projet sombre" href="projets.html"><img src="assets/logo-unite.png" alt="Logo UNITE"></a>
+          <div class="corps">
+            <span class="theme">2026-2027 · En cours</span>
             <h3>UNITE</h3>
-            <p>Des solutions modulaires de biodétection pour répondre aux questions des citoyens : l'eau de mon puits, les cyanobactéries de mon lac, la tique qui m'a piqué, les espèces envahissantes.</p>
+            <p>Des solutions modulaires de biodétection pour répondre aux questions des citoyens : l'eau de mon puits, mon lac, la tique qui m'a piqué.</p>
             <a class="lien" href="projets.html">En savoir plus <svg class="fleche"><use href="#i-fleche"/></svg></a>
-          </div>
-        </article>
-        <article class="carte">
-          <img src="assets/agir2-levain-sentinelle.jpg" alt="Affiche du projet A.G.I.R.² Levain sentinelle : un pot de levain dont les microorganismes réagissent à l'environnement bâti de l'école">
-          <div class="corps">
-            <span class="theme">Recherche-action · Science citoyenne</span>
-            <h3>A.G.I.R.² et BioSTIM</h3>
-            <p>Les microbes de nos bâtiments, sentinelles de la santé des milieux intérieurs, à Gatineau et à Rouyn-Noranda. Avec des séquences BioSTIM pour faire entrer cette recherche dans les classes.</p>
-            <a class="lien" href="recherche.html">En savoir plus <svg class="fleche"><use href="#i-fleche"/></svg></a>
-          </div>
-        </article>
-        <article class="carte">
-          <img src="assets/igem-paris-2025.jpg" alt="Les membres de l'équipe iGEM Outaouais au Grand Jamboree de Paris en 2025">
-          <div class="corps">
-            <span class="theme">Projets jeunesse</span>
-            <h3>iGEM Outaouais</h3>
-            <p>Fondée en 2023, la seule équipe iGEM au Canada menée par une institution non universitaire. Des élèves du secondaire et du collégial qui conçoivent des solutions de biologie synthétique.</p>
-            <a class="lien" href="https://equipeigemoutaouais.com/" target="_blank" rel="noopener">Visiter le site de l'équipe <svg class="fleche"><use href="#i-fleche"/></svg></a>
           </div>
         </article>
       </div>
