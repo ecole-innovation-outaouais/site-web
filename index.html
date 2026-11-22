@@ -145,6 +145,29 @@ p{margin:0}
 .carte p{color:var(--texte-doux)}
 .carte .lien{margin-top:auto;font-weight:700;display:flex;gap:.4em;align-items:center;text-decoration:none}
 
+
+/* Projets de l'équipe iGEM */
+.equipe-igem{padding:0 0 96px}
+.saisons{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.saison{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;background:var(--blanc)}
+.saison img{width:100%;height:100%;object-fit:cover}
+.saison .corps{padding:22px;display:flex;flex-direction:column;gap:8px}
+.saison .annee{font:700 .85rem var(--corps);color:var(--cuivre);letter-spacing:.04em}
+.saison p{color:var(--texte-doux)}
+.saison .medaille{align-self:flex-start;margin-top:4px;font:700 .8rem/1 var(--corps);padding:.5em .8em;border-radius:999px;background:#ECEFF1;color:#3E5560}
+.vigil{margin-top:24px;display:grid;grid-template-columns:1fr 1.15fr;gap:0;border-radius:var(--r);overflow:hidden;background:#E3ECE5}
+.vigil img{width:100%;height:100%;object-fit:contain;background:var(--blanc);padding:16px}
+.vigil .corps{padding:36px;display:flex;flex-direction:column;gap:14px}
+.vigil .eyebrow{color:#2E5A41}
+.vigil h3{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800}
+.vigil p{color:#30483A}
+.faits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.fait{background:var(--blanc);border-radius:12px;padding:14px}
+.fait strong{display:block;font:800 1.5rem/1.1 var(--display);color:var(--petrole)}
+.fait span{font-size:.88rem;color:var(--texte-doux)}
+@media (max-width:980px){.saisons,.vigil{grid-template-columns:1fr}.vigil img{max-height:340px}}
+@media (max-width:600px){.saison{grid-template-columns:1fr}.saison img{aspect-ratio:4/3}.faits{grid-template-columns:1fr}}
+
 /* Dimensions */
 .dimensions{padding:0 0 96px}
 .dims{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
@@ -438,6 +461,47 @@ textarea{min-height:120px;resize:vertical}
     </div>
   </section>
 
+
+  <section class="equipe-igem" aria-labelledby="t-igem">
+    <div class="wrap">
+      <p class="eyebrow">Les projets de l'équipe iGEM Outaouais</p>
+      <h2 id="t-igem">Trois saisons, trois réponses à des enjeux d'ici</h2>
+      <p class="lead" style="margin-top:12px">Chaque année, l'équipe choisit un problème réel, conçoit une solution en biologie synthétique et la défend devant le monde au Grand Jamboree de Paris.</p>
+      <div class="saisons">
+        <article class="saison">
+          <img src="assets/time2act.jpg" alt="Logo du projet TIME2ACT : un sablier et le nom TIME² ACT">
+          <div class="corps">
+            <span class="annee">2023-2024 · Plastiques</span>
+            <h3>TIME2ACT</h3>
+            <p>Des enzymes et des biofilms programmables pour dégrader les plastiques PET que le recyclage actuel n'accepte pas, comme les barquettes opaques ou thermoformées.</p>
+            <span class="medaille">Médaille d'argent · Paris 2024</span>
+          </div>
+        </article>
+        <article class="saison">
+          <img src="assets/logo-une-seule-sante-outaouais.jpg" alt="Logo Une seule santé Outaouais : une poule, un arbre, une vache et une personne reliés par une rivière">
+          <div class="corps">
+            <span class="annee">2024-2025 · Antibiorésistance</span>
+            <h3>One Health Outaouais</h3>
+            <p>Comment le fumier épandu dans nos champs propage-t-il la résistance aux antibiotiques ? L'équipe a étudié le transfert des gènes de résistance dans les sols agricoles de la région et mis au point des tests de surveillance rapides.</p>
+            <span class="medaille">Médaille d'argent · Paris 2025</span>
+          </div>
+        </article>
+      </div>
+      <article class="vigil" aria-labelledby="t-vigil">
+        <img src="assets/vigil-farm-logos.jpg" alt="Les six déclinaisons du logo VIGIL FARM, une ferme avec grange, rivière et animal différent selon le type d'élevage">
+        <div class="corps">
+          <p class="eyebrow">De la recherche à l'entreprise</p>
+          <h3 id="t-vigil">VIGIL | FARM</h3>
+          <p>Né du projet One Health Outaouais, VIGIL | FARM est un test portable qui détecte les gènes de résistance aux antibiotiques directement à la ferme. Conçu avec et pour les producteurs de l'Outaouais, il aide à choisir le bon traitement, à protéger le troupeau et à limiter la propagation de l'antibiorésistance dans les sols et l'eau.</p>
+          <div class="faits">
+            <div class="fait"><strong>15 à 30 min</strong><span>pour un résultat, sur place, sans transporter les animaux</span></div>
+            <div class="fait"><strong>&lt; 30 $</strong><span>par test, pour les petites et moyennes fermes</span></div>
+            <div class="fait"><strong>~400</strong><span>fermes d'élevage en Outaouais, premier marché visé</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
   <section class="dimensions" aria-labelledby="t-dims">
     <div class="wrap">
       <p class="eyebrow">Notre approche</p>
