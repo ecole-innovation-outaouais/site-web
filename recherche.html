@@ -198,6 +198,18 @@ p{margin:0}
 .cours .apprend{font-size:.95rem;margin-top:8px}
 .cours .apprend b{color:var(--petrole)}
 .cours .ref-act{font-size:.8rem;color:var(--texte-doux);margin-top:6px}
+.continuum{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
+.continuum::before{content:"";position:absolute;left:0;right:0;top:17px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--sauge),var(--petrole),var(--cuivre))}
+.continuum li{position:relative;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--r);padding:48px 18px 18px}
+.continuum .m{position:absolute;top:4px;left:14px;background:var(--nuit);color:#fff;font:700 .85rem var(--display);padding:6px 12px;border-radius:999px}
+.continuum .def{font-size:.92rem;color:var(--texte-doux);margin:0 0 10px}
+.continuum .ex{font-size:.95rem;margin:0;padding-top:10px;border-top:1px solid var(--trait)}
+.pourquoi{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:36px}
+.pourquoi h3{font-size:1.25rem;margin-bottom:8px}
+.pourquoi p{color:var(--texte-doux)}
+.ref-shirk{margin-top:28px;font-size:.82rem;color:var(--texte-doux)}
+@media (max-width:980px){.continuum{grid-template-columns:1fr 1fr}.continuum::before{display:none}.pourquoi{grid-template-columns:1fr}}
+@media (max-width:600px){.continuum{grid-template-columns:1fr}}
 .confs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
 .conf{display:flex;gap:22px;align-items:flex-start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--r);padding:26px 28px}
 .conf img.portrait{width:88px;height:88px;flex:none;border-radius:50%;object-fit:cover}
@@ -478,13 +490,19 @@ a.logo-projet{text-decoration:none}
   <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Faire de la recherche avec nous</p>
-      <h2>Deux façons de collaborer</h2>
-      <div class="axes">
+      <h2>Un terrain de recherche unique, du secondaire au cégep</h2>
+      <p class="lead" style="margin-top:14px;max-width:820px">L'École est à la fois un lieu d'apprentissage et un laboratoire vivant. Chercheurs universitaires, centres de recherche et organismes y trouvent des jeunes engagés, des enseignants-chercheurs, des laboratoires équipés et un ancrage solide dans les communautés de l'Outaouais.</p>
+      <div class="axes" style="margin-top:32px">
         <article class="axe">
           <img src="assets/agir2-11.jpg" alt="Schéma du continuum interordre et intergénérationnel : élèves du primaire et du secondaire, étudiants, enseignants, scientifiques et citoyens qui apprennent, innovent et agissent ensemble">
           <div class="corps">
             <h3>Recherche participative</h3>
-            <p>Des élèves, des enseignants et des citoyens qui coproduisent la science sur des enjeux de leur milieu : les BioBlitz et le levain sentinelle d'A.G.I.R.².</p>
+            <p><b>Coproduire la science avec les citoyens.</b> Des jeunes, des enseignants et des citoyens recueillent et analysent des données sur des enjeux de leur milieu : la biodiversité avec les BioBlitz, le microbiome des maisons et des écoles avec le levain sentinelle d'A.G.I.R.².</p>
+            <ul>
+              <li>A.G.I.R.², financé à hauteur de 500 000 $ par le FRQ (2026-2029)</li>
+              <li>Un consortium avec l'UQO, l'Université McGill, l'Université d'Ottawa, l'Université de Genève et le CTRI</li>
+              <li>Plus de 1 500 participants aux BioBlitz en 2025-2026</li>
+            </ul>
             <a href="science-participative.html" style="font-weight:700;color:var(--petrole)">Découvrir la science participative →</a>
           </div>
         </article>
@@ -492,8 +510,9 @@ a.logo-projet{text-decoration:none}
           <img src="assets/recherche-pedagogique-labo.jpg" alt="Quatre étudiantes en sarrau, souriantes, dans un laboratoire de biologie">
           <div class="corps">
             <h3>Recherche pédagogique</h3>
-            <p>Comprendre comment on apprend à innover : l'École est un terrain pour étudier l'apprentissage par la recherche, du secondaire au collégial.</p>
+            <p><b>Comprendre comment on apprend à innover.</b> Seule équipe iGEM canadienne qui ne soit pas pilotée par une université, l'École offre un terrain rare pour étudier l'apprentissage expérientiel de l'innovation et le développement de l'agentivité des jeunes.</p>
             <ul>
+              <li>170 jeunes et 37 000 heures d'apprentissage de l'innovation depuis 2023</li>
               <li>Des cohortes suivies dans les parcours Exploration et Innovation</li>
               <li>Des séquences BioSTIM déployées du primaire au secondaire</li>
               <li>Un partenariat avec les écoles et les centres de services scolaires de la région</li>
@@ -501,6 +520,32 @@ a.logo-projet{text-decoration:none}
           </div>
         </article>
       </div>
+      <p style="margin-top:24px;color:var(--texte-doux)"><i>Vous menez une recherche en éducation, en santé environnementale, en biotechnologie ou en innovation sociale ? <a href="participer.html" style="font-weight:700;color:var(--petrole)">Proposez-nous un projet</a>.</i></p>
+    </div>
+  </section>
+  <section class="page-section alt" id="continuum">
+    <div class="wrap">
+      <p class="eyebrow">Notre cadre</p>
+      <h2>Le continuum de la recherche participative</h2>
+      <p class="lead" style="margin-top:14px;max-width:820px">Nous nous appuyons sur le cadre de Shirk et ses collègues (2012), qui distingue cinq modèles de participation du public à la recherche scientifique, selon la part que prennent les participants à chaque étape, de la question jusqu'à la diffusion des résultats.</p>
+      <ol class="continuum">
+        <li><span class="m">Contractuel</span><p class="def">Une communauté demande à des chercheurs de mener une étude précise.</p><p class="ex"><b>UNITE</b>, comme offre de service : une agricultrice ou un organisme pose sa question, l'équipe conçoit le test.</p></li>
+        <li><span class="m">Contributif</span><p class="def">Le projet est conçu par les scientifiques ; le public fournit surtout des données.</p><p class="ex"><b>Les BioBlitz</b> : les participants documentent la biodiversité selon un protocole conçu par le SEBO.</p></li>
+        <li><span class="m">Collaboratif</span><p class="def">Le public aide aussi à affiner le protocole, à analyser les données ou à diffuser les résultats.</p><p class="ex"><b>Les BioBlitz en milieu scolaire</b> : les élèves analysent leurs observations et présentent leurs résultats.</p></li>
+        <li><span class="m">Cocréé</span><p class="def">Le projet est conçu ensemble ; des participants prennent part à presque toutes les étapes.</p><p class="ex"><b>Le levain sentinelle d'A.G.I.R.²</b> et <b>les projets iGEM</b> : les jeunes et les citoyens formulent la question, conçoivent, expérimentent et communiquent, avec les chercheurs et les partenaires.</p></li>
+        <li><span class="m">Collégial</span><p class="def">Des non-spécialistes mènent eux-mêmes leur recherche.</p><p class="ex"><b>Les projets Expo-sciences</b> : les jeunes conduisent leur propre recherche, évaluée par un jury.</p></li>
+      </ol>
+      <div class="pourquoi">
+        <div>
+          <h3>Pourquoi ce continuum ?</h3>
+          <p>Shirk et ses collègues décrivent la participation selon deux dimensions : son <b>degré</b>, c'est-à-dire les étapes de la recherche auxquelles on prend part, et sa <b>qualité</b>, c'est-à-dire la mesure dans laquelle le projet répond aux intérêts des participants. Leur question centrale : à qui le projet sert-il ?</p>
+        </div>
+        <div>
+          <h3>Une progression pour les jeunes</h3>
+          <p>L'École ne se limite pas à un modèle : elle fait cheminer les jeunes le long du continuum. Dans le parcours Exploration, ils contribuent à des projets conçus par d'autres ; dans le parcours Innovation, ils cocréent leur propre projet ; à Expo-sciences, ils deviennent chercheurs à part entière. C'est ce passage de contributeur à cocréateur, puis à chercheur autonome, qui développe leur agentivité.</p>
+        </div>
+      </div>
+      <p class="ref-shirk">Shirk, J. L., Ballard, H. L., Wilderman, C. C., Phillips, T., Wiggins, A., Jordan, R., McCallie, E., Minarchek, M., Lewenstein, B. V., Krasny, M. E. et Bonney, R. (2012). Public participation in scientific research: a framework for deliberate design. <i>Ecology and Society</i>, 17(2), 29. <a href="https://doi.org/10.5751/ES-04705-170229" target="_blank" rel="noopener">doi.org/10.5751/ES-04705-170229</a></p>
     </div>
   </section>
   <section class="page-section" id="agir2">
