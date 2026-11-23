@@ -512,11 +512,35 @@ a.logo-projet{text-decoration:none}
   <section class="titre-page">
     <div class="wrap">
       <p class="eyebrow">Recherche</p>
-      <h1>Un écosystème de jeunes, de citoyens et d'écoles prêts à participer à la recherche</h1>
+      <h1>Un écosystème de jeunes, de citoyens et d'écoles prêts à participer à <span style="color:var(--sable)">la recherche</span></h1>
       <p>Pour les chercheurs qui souhaitent mener de la recherche participative ou de la recherche pédagogique.</p>
     </div>
   </section>
-  <section class="page-section">
+  <style>
+  .rech-couleur .axe:nth-child(1){border-top:5px solid var(--petrole)}
+  .rech-couleur .axe:nth-child(2){border-top:5px solid var(--cuivre)}
+  .rech-couleur .axe:nth-child(1) h3{color:var(--petrole)}
+  .rech-couleur .axe:nth-child(2) h3{color:var(--cuivre)}
+  #continuum{background:#EEF3EF}
+  #continuum .continuum li{border-top:5px solid}
+  #continuum .continuum li:nth-child(1){border-top-color:var(--sauge)}#continuum .continuum li:nth-child(1) .m{background:var(--sauge)}
+  #continuum .continuum li:nth-child(2){border-top-color:var(--petrole)}#continuum .continuum li:nth-child(2) .m{background:var(--petrole)}
+  #continuum .continuum li:nth-child(3){border-top-color:var(--sable)}#continuum .continuum li:nth-child(3) .m{background:var(--sable);color:var(--nuit)}
+  #continuum .continuum li:nth-child(4){border-top-color:var(--cuivre)}#continuum .continuum li:nth-child(4) .m{background:var(--cuivre)}
+  #continuum .continuum li:nth-child(5){border-top-color:var(--nuit)}
+  #continuum .pourquoi h3{color:var(--cuivre)}
+  #agentivite{background:#FBF4E2}
+  #agentivite .etapes li:nth-child(1)::before{background:var(--petrole);color:#fff}
+  #agentivite .etapes li:nth-child(2)::before{background:var(--cuivre);color:#fff}
+  #agentivite .etapes li:nth-child(3)::before{background:var(--sable);color:var(--nuit)}
+  #agentivite h2,#continuum h2{color:var(--nuit)}
+  #agir2 .etapes li:nth-child(1)::before{background:var(--sauge);color:#fff}
+  #agir2 .etapes li:nth-child(2)::before{background:var(--petrole);color:#fff}
+  #agir2 .etapes li:nth-child(3)::before{background:var(--cuivre);color:#fff}
+  #agir2{border-top:6px solid var(--sauge)}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+  <section class="page-section rech-couleur">
     <div class="wrap">
       <p class="eyebrow">Faire de la recherche avec nous</p>
       <h2>Un terrain de recherche unique, du secondaire au cégep</h2>
