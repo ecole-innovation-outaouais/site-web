@@ -210,6 +210,9 @@ p{margin:0}
 .ref-shirk{margin-top:28px;font-size:.82rem;color:var(--texte-doux)}
 @media (max-width:980px){.continuum{grid-template-columns:1fr 1fr}.continuum::before{display:none}.pourquoi{grid-template-columns:1fr}}
 @media (max-width:600px){.continuum{grid-template-columns:1fr}}
+.bb-galerie{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.bb-galerie img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.bb-galerie img.large{grid-column:1/-1;aspect-ratio:16/9}
 .confs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
 .conf{display:flex;gap:22px;align-items:flex-start;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:var(--r);padding:26px 28px}
 .conf img.portrait{width:88px;height:88px;flex:none;border-radius:50%;object-fit:cover}
@@ -499,6 +502,12 @@ a.logo-projet{text-decoration:none}
         <h2>Les BioBlitz</h2>
         <p class="lead" style="margin-top:14px">Un BioBlitz est un inventaire de la biodiversité, sur un territoire délimité et pendant un temps limité. Chercheurs et citoyens partent ensemble à la recherche du plus grand nombre possible d'espèces vivantes, les photographient et les identifient avec l'application iNaturalist.</p>
         <p class="lead" style="margin-top:12px">Menés par Catherine Hallé, chercheuse au Centre SEBO, les BioBlitz font de chaque participant un observateur de la nature. Les données recueillies servent aussi aux chercheurs du SEBO pour suivre et améliorer la biodiversité.</p>
+        <div class="bb-galerie">
+          <img class="large" src="assets/bioblitz-kettle-2025-especes.jpg" alt="Mosaïque d'espèces observées lors du BioBlitz de l'île Kettle : plantes, champignons, insectes et oiseaux, photos iNaturalist" loading="lazy">
+          <img src="assets/bioblitz-nouvelles-frontieres-2026.jpg" alt="Une quarantaine de jeunes de l'école Nouvelles-Frontières réunis dans un escalier de bois en forêt, au parc de la Gatineau" style="border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 40%">
+          <img src="assets/bioblitz-foret-boucher-2026.jpg" alt="Au kiosque du SEBO, une animatrice montre des spécimens à un enfant, à côté d'un microscope" >
+        </div>
+        <p style="margin-top:8px;font-size:.8rem;color:var(--texte-doux)">Mosaïque : observations iNaturalist de l'île Kettle (CC BY-NC).</p>
       </div>
       <div>
         <div class="offres" style="grid-template-columns:1fr;margin-top:0">
@@ -512,10 +521,6 @@ a.logo-projet{text-decoration:none}
         </div>
         <p style="margin-top:14px;color:var(--texte-doux)">Pour participer, il suffit d'un téléphone, de l'application iNaturalist et d'un peu de curiosité.</p>
       </div>
-    </div>
-    <div class="wrap deux" style="margin-top:40px;align-items:start">
-      <figure style="margin:0"><img src="assets/bioblitz-nouvelles-frontieres-2026.jpg" alt="Une quarantaine de jeunes de l'école Nouvelles-Frontières réunis dans un escalier de bois en forêt, au parc de la Gatineau" style="border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 40%"><figcaption style="margin-top:8px;color:var(--texte-doux)">Les jeunes de l'école Nouvelles-Frontières au BioBlitz 2026, dans le parc de la Gatineau.</figcaption></figure>
-      <figure style="margin:0"><img src="assets/bioblitz-foret-boucher-2026.jpg" alt="Au kiosque du SEBO, une animatrice montre des spécimens à un enfant, à côté d'un microscope" style="border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover"><figcaption style="margin-top:8px;color:var(--texte-doux)">Au kiosque du SEBO, animé par Jacinthe LeSage, au BioBlitz de la forêt Boucher, le 20 juin 2026.</figcaption></figure>
     </div>
   </section>
   <section class="page-section alt" id="levain">
